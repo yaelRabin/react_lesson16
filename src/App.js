@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
+
+import './pages/AllBooks'
+import AllBooks from './pages/AllBooks';
+import EditBook from './components/EditBook';
+import AddBook from './pages/AddBook';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let selectedBookToEdit = useSelector(state => state.selectedBookToEdit)
+  return (<>
+    {/* <AllBooks /> */}
+    {/* {selectedBookToEdit&&<EditBook/>} */}
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<AllBooks />} />
+        <Route path='/addBook' element={<AddBook/>}/>
+      </Routes>
+    </BrowserRouter>
+  </>);
 }
 
 export default App;
