@@ -9,7 +9,6 @@ const OneBook = ({ one }) => {
     const selectedBook = useSelector(state => state.selectedBook)
 
     return (
-
         <div style={{flex:'1',textAlign:'center',border:'black 2px solid'}}>
             <img src={one.imgUrl} alt={one.name} style={{height:'250px'}} /><br/>
             <input type="button" value="הצג פרטים" onClick={() => dispatch(selectBookToShow(one))} />
