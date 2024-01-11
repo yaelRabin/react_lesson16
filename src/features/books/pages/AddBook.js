@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dispatch } from "redux";
-import { addBook } from '../store/actions/book'
+// import { addBook } from '../../../store/actions/book'
+import { addBook } from '../bookSlice';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +11,7 @@ const AddBook = () => {
     const [bookToAdd, setBookToAdd] = useState({});
     const [error, setError] = useState(false);
     function changeBookToAdd(e) {
-        setBookToAdd({ ...bookToAdd, [e.target.name]: e.target.value })
+        setBookToAdd({ ...bookToAdd,[e.target.name]: e.target.value })
     }
     function saveNewBook() {
         if (!bookToAdd.name || !bookToAdd.price || +bookToAdd.price <= 0 || !bookToAdd.author)

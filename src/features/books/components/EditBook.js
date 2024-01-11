@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { saveEditedBook } from "../store/actions/book";
+// import { saveEditedBook } from "../../../store/actions/book";
+import {saveEditedBook} from '../bookSlice';
 const EditBook = () => {
     const dispatch=useDispatch();
-    let forEdit = useSelector(state => state.selectedBookToEdit);
+    let forEdit = useSelector(state => state.bookSlice.selectedBookToEdit);
     const [editedBook, setEditedBook] = useState({ ...forEdit });
     function change(e) {
         setEditedBook({ ...editedBook, [e.target.name]: e.target.value });

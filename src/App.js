@@ -2,14 +2,14 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 
-import './pages/AllBooks'
-import AllBooks from './pages/AllBooks';
-import EditBook from './components/EditBook';
-import AddBook from './pages/AddBook';
+// import './features/books/pages/AllBooks';
+import AllBooks from './features/books/pages/AllBooks';
+// import EditBook from './features/books/components/EditBook';
+import AddBook from './features/books/pages/AddBook';
 
 
 function App() {
-  let selectedBookToEdit = useSelector(state => state.selectedBookToEdit)
+  let selectedBookToEdit = useSelector(state => state.bookSlice.selectedBookToEdit)
   return (<>
     {/* <AllBooks /> */}
     {/* {selectedBookToEdit&&<EditBook/>} */}

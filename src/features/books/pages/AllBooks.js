@@ -4,8 +4,8 @@ import OneBook from '../components/OneBook'
 import EditBook from '../components/EditBook';
 
 const AllBooks = () => {
-    let arr = useSelector(st => st.arr);
-    let selectedBookToEdit=useSelector(st=>st.selectedBookToEdit)
+    let arr = useSelector(st => st.bookSlice.arr);
+    let selectedBookToEdit=useSelector(st=>st.bookSlice.selectedBookToEdit)
     return (<>
     
         <div style={{display:'flex',width:'95%',margin:'auto'}}>
